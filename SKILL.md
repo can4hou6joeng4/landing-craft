@@ -341,6 +341,26 @@ rm -f "$_OUT/_sections.html" "$_OUT/_texture.css" "$_OUT/_gsap-base.js"
 7. **Use bundled assets.** The texture, GSAP snippets, and clip-paths must come from the skill's asset files — not reimplemented from scratch.
 8. **`.line-wrap` CJK fix.** Whenever the page has Chinese or Japanese text and uses `.line-wrap { overflow: hidden }` for line reveal animations, add `padding-top: 0.15em; margin-top: -0.15em;` to prevent CJK ascenders from being clipped at the top.
 9. **No clone grids.** When a section contains multiple repeating items (feature rows, pricing cards, FAQ items, testimonials), they must not all share the same visual treatment. One item should be the focal point — larger, accented, or with a distinct layout — while others form the supporting cast. A section should feel like a poster with visual hierarchy, not a spreadsheet of identical rows. This is the single biggest cause of pages looking "templated" rather than designed.
+10. **Responsive by default.** Every page must work on mobile (375px) through desktop (1440px). Rules:
+    - Hero text: use `clamp()` for all font sizes, never fixed `px`/`rem` alone
+    - Grid layouts: collapse to single column below 768px via `@media (max-width: 768px)`
+    - Navigation: pill nav shrinks gap/padding on mobile; side nav hides on mobile with a toggle
+    - Touch targets: all buttons and links minimum 44px height
+    - No horizontal scroll: test with `overflow-x: hidden` on `body`, but fix the root cause
+    - Images/SVGs: use `max-width: 100%` and `aspect-ratio` to prevent layout shift
+11. **SEO baseline.** Every generated `index.html` must include:
+    - `<title>` with product name and value proposition (under 60 chars)
+    - `<meta name="description">` with a compelling summary (under 155 chars)
+    - `<meta property="og:title">`, `og:description`, `og:type` (website)
+    - `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+    - Semantic HTML: one `<h1>`, sequential heading hierarchy (`h1` → `h2` → `h3`), `<nav>`, `<main>`, `<footer>`
+    - `lang` attribute on `<html>` matching the page language
+12. **Footer required.** Every page must have a `<footer>` with at minimum: brand name, copyright year, and a link back to top or to the product. No page ends abruptly after the last section.
+13. **Accessibility baseline.** Every generated page must:
+    - Use the `prefersReducedMotion` guard from `gsap-snippets.js` (function 0)
+    - Include `<a class="skip-link" href="#main">` for keyboard users
+    - Ensure all interactive elements have visible `:focus-visible` styles
+    - Use `aria-expanded` on FAQ accordion triggers and nav toggles
 
 ---
 
