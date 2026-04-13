@@ -17,8 +17,10 @@ Color output (one token per line, for shell eval):
 Exit 0 on success, 1 if city not found.
 """
 
-import sys
+from __future__ import annotations
+
 import re
+import sys
 from pathlib import Path
 
 CITY_STYLES = Path(__file__).parent.parent.parent / "references" / "city-styles.md"
