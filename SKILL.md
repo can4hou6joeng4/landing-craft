@@ -335,6 +335,16 @@ After all files are written, delete the staging files:
 rm -f "$_OUT/_sections.html" "$_OUT/_texture.css" "$_OUT/_gsap-base.js"
 ```
 
+### Step 5: Preview the Result
+
+After all files are written, open the generated page in the browser so the user sees it immediately:
+
+```bash
+open "$_OUT/index.html" 2>/dev/null || xdg-open "$_OUT/index.html" 2>/dev/null || echo "Preview ready: $(cd "$_OUT" && pwd)/index.html"
+```
+
+Tell the user: "落地页已生成并在浏览器中打开。如果需要调整任何细节，随时告诉我。"
+
 ---
 
 ## Design Laws (Never Break These)
