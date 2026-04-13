@@ -32,10 +32,10 @@ your-product-landing/
 
 ## Quick Start
 
-This is a Claude Code skill. Install it:
+This is a Claude Code skill. Install it globally:
 
 ```bash
-claude install-skill https://github.com/can4hou6joeng4/landing-craft
+npx skills add can4hou6joeng4/landing-craft -a claude-code -g -y
 ```
 
 Then just say:
