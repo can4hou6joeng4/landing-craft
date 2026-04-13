@@ -4,9 +4,14 @@
    and plug into your main.js. Do NOT reinvent these.
    ============================================================ */
 
+// ─── 0. REDUCED MOTION GUARD ─────────────────────────────────
+// Check once, use everywhere. When true, skip all non-essential animations.
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 // ─── 1. BLUR-STAGGER ENTRANCE (hero text reveal) ──────────────
 // Usage: call once on DOMContentLoaded
 function initHeroEntrance(containerSelector, itemSelector) {
+  if (prefersReducedMotion) { gsap.set(itemSelector || `${containerSelector} > *`, { opacity: 1 }); return; }
   gsap.from(itemSelector || `${containerSelector} > *`, {
     y: 32,
     opacity: 0,
@@ -29,6 +34,7 @@ function initHeroEntrance(containerSelector, itemSelector) {
 // Always add this compensation in style.css:
 //   .line-wrap { overflow: hidden; padding-top: 0.15em; margin-top: -0.15em; }
 function initLineReveal(headingSelector) {
+  if (prefersReducedMotion) return;
   const headings = document.querySelectorAll(headingSelector);
   headings.forEach((heading) => {
     const lines = heading.querySelectorAll(".line-inner");
@@ -53,6 +59,7 @@ function initLineReveal(headingSelector) {
 // ─── 3. PARALLAX LAYERS (depth on scroll) ──────────────────────
 // Pass an array of { selector, speed } — speed 0.5 = half rate, 1.5 = faster
 function initParallax(layers) {
+  if (prefersReducedMotion) return;
   layers.forEach(({ selector, speed }) => {
     gsap.to(selector, {
       y: () => window.innerHeight * (speed - 1) * -0.4,
@@ -81,6 +88,7 @@ function initParallax(layers) {
 //         <div class="steps-content">             ← scroll height
 //           <div class="step" data-step="0">
 function initStickySteps(wrapperSelector, panelSelector, stepSelector) {
+  if (prefersReducedMotion) { document.querySelectorAll(stepSelector).forEach(s => s.classList.add("active")); return; }
   const steps = document.querySelectorAll(stepSelector);
   const total = steps.length;
 
@@ -109,6 +117,20 @@ function initBlastMenu(triggerSelector, overlaySelector, itemSelector) {
   const items   = document.querySelectorAll(itemSelector);
   let isOpen = false;
 
+  if (prefersReducedMotion) {
+    gsap.set(overlay, { display: "none" });
+    trigger.addEventListener("click", () => {
+      isOpen = !isOpen;
+      trigger.setAttribute("aria-expanded", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+      overlay.style.display = isOpen ? "flex" : "none";
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen) { isOpen = false; overlay.style.display = "none"; document.body.style.overflow = ""; }
+    });
+    return;
+  }
+
   // Overlay starts: clip-path: inset(0% 0% 100% 0%)
   gsap.set(overlay, { clipPath: "inset(0% 0% 100% 0%)", display: "flex" });
 
@@ -135,6 +157,7 @@ function initBlastMenu(triggerSelector, overlaySelector, itemSelector) {
 // ─── 6. MAGNETIC PILL NAV ──────────────────────────────────────
 // Bottom pill floats toward the cursor when nearby.
 function initMagneticPill(pillSelector, radius, strength) {
+  if (prefersReducedMotion) return;
   radius   = radius   || 120;
   strength = strength || 0.28;
   const pill = document.querySelector(pillSelector);
@@ -288,6 +311,7 @@ function animateCount(el, target, duration, suffix) {
   if (!el) return;
   suffix   = suffix   || '';
   duration = duration || 1.6;
+  if (prefersReducedMotion) { el.textContent = Math.round(target).toLocaleString() + suffix; return; }
   const obj = { val: 0 };
   gsap.to(obj, {
     val: target,
