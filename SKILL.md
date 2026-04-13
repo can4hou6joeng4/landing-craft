@@ -35,9 +35,9 @@ This skill comes with pre-built assets. Read and use them directly:
 | `assets/style-preview-template.html` | 57-city style preview cards | Step 2: `sed` fill `__PRODUCT_NAME__` + `__PRODUCT_HEADLINE__`, save as `style-preview.html`, open |
 | `assets/options-preview-template.html` | Interactive demos: nav styles, color variants, transition styles, hero/features/testimonials variants | Step 3: `sed` fill city color tokens + product name, save as `options-preview.html`, open |
 | `assets/textures.css` | 6 CSS texture classes (`.texture-kyoto`, `.texture-paris`, `.texture-tokyo`, etc.) | Copy the matching class into `style.css` |
-| `assets/gsap-snippets.js` | 6 GSAP animation functions (blur entrance, line reveal, parallax, sticky steps, blast menu, magnetic pill) | Copy the relevant functions into `main.js` |
+| `assets/gsap-snippets.js` | 8 GSAP animation functions (blur entrance, line reveal, parallax, sticky steps, blast menu, magnetic pill, hero demo stepper, animated count) | Copy the relevant functions into `main.js` |
 | `assets/clip-paths.css` | 8 clip-path divider classes (`.clip-diagonal-br`, `.clip-parallelogram`, `.clip-arc-bottom`, etc.) | Use at least 2 in `style.css` for section dividers |
-| `assets/sections/hero-variants.html` | 3 Hero section templates (全屏铺张/分屏张力/极简下降) | Step 4: pick the variant matching the user's typography preference, copy and adapt |
+| `assets/sections/hero-variants.html` | 7 Hero section templates (全屏铺张/分屏张力/极简下降/产品演示/文字爆炸/杂志撕裂/弹出卡片) | Step 4: pick the variant matching the user's typography preference, copy and adapt |
 | `assets/sections/features-variants.html` | 6 Features section templates (大数字/交替展示/时间线/本托格子/水平滚动/问答展开) | Step 4: pick based on content type (stats → big number, how-it-works → timeline) |
 | `assets/sections/testimonial-variants.html` | 6 Testimonials templates (紧凑卡片/单列引用/马赛克拼贴/滚动横条/对话气泡/头像墙) | Step 4: pick based on testimonial volume and visual style preference |
 | `assets/sections/conversion-variants.html` | Pricing table, FAQ, brand wall, power CTA | Step 4: copy relevant section, all use CSS custom properties |
