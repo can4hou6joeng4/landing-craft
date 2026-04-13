@@ -113,6 +113,20 @@ def make_handler(html_path, result_path):
     return _Handler
 
 
+def find_free_port(preferred, max_attempts=10):
+    """Try preferred port, then increment until a free one is found."""
+    import socket
+    for offset in range(max_attempts):
+        port = preferred + offset
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.bind(("127.0.0.1", port))
+                return port
+        except OSError:
+            continue
+    return None
+
+
 def main():
     args = parse_args()
 
@@ -130,14 +144,26 @@ def main():
     # 1. Fill template
     substitute(args.template, args.output, args.subs)
 
-    # 2. Start HTTP server
+    # 2. Find available port and start HTTP server
+    port = find_free_port(args.port)
+    if port is None:
+        sys.stderr.write(
+            "Could not find a free port in range {p}–{e}.\n"
+            .format(p=args.port, e=args.port + 9)
+        )
+        sys.exit(1)
+    if port != args.port:
+        sys.stderr.write(
+            "Port {p} in use, using {a} instead.\n"
+            .format(p=args.port, a=port)
+        )
     html_abs = str(Path(args.output).resolve())
     Handler = make_handler(html_abs, str(result_path))
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
 
     # 3. Open browser (cross-platform: macOS / Linux / Windows)
-    webbrowser.open("http://localhost:{port}".format(port=args.port))
+    webbrowser.open("http://localhost:{port}".format(port=port))
 
     # 4. Poll for result
     for _ in range(args.timeout):
