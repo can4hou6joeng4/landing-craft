@@ -4,7 +4,7 @@
     {
       "id": 0,
       "name": "luma-ai-diary",
-      "prompt": "帮我做个落地页，我的产品叫 Luma，是个 AI 日记 app。风格我想要首尔那种感觉，干净但有表达力。需要 Hero、功能介绍、用户评价、下载 CTA 这几个板块。排版气质选叙事型。Nav 选底部磁性胶囊。",
+      "prompt": "帮我做个落地页，我的产品叫 Luma，是个 AI 日记 app。风格我想要首尔那种感觉，干净但有表达力。需要 Hero、功能介绍、用户评价、下载 CTA 这几个板块。排版气质选叙事型。Nav 选底���磁性胶囊。",
       "expected_output": "Multi-file landing page: index.html + style.css + main.js + assets/icons.svg. Seoul city style applied. Bottom pill nav with magnetic effect. GSAP ScrollTrigger animations. No white backgrounds. No rectangular section dividers.",
       "files": [],
       "assertions": [
@@ -113,6 +113,113 @@
         {
           "id": "neon-glow",
           "description": "style.css contains box-shadow with rgba color for a glow effect"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "zen-wellness-dark-tone",
+      "prompt": "帮我做一个冥想 App 的落地页，产品叫 ZenFlow。风格选京都。色调选暗黑版。需要 Hero、功能介绍、定价、FAQ、CTA。Nav 选拆分居中型。",
+      "expected_output": "Multi-file landing page with Kyoto style in dark tone variant. Split centered nav. Dark background derived from Kyoto palette. Pricing section with toggle. FAQ accordion. Serif display font.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "multifile-output",
+          "description": "输出包含 index.html、style.css、main.js、assets/icons.svg 四个文件"
+        },
+        {
+          "id": "dark-tone-applied",
+          "description": "style.css :root 中 --bg 使用深色值（#0 或 #1 开头的 hex），不是京都默认的暖白色"
+        },
+        {
+          "id": "split-nav",
+          "description": "index.html 包含 split-nav 或居中 logo + 两侧链接的导航结构"
+        },
+        {
+          "id": "pricing-section",
+          "description": "index.html 包含定价板块，有至少 2 个价格卡片"
+        },
+        {
+          "id": "faq-accordion",
+          "description": "index.html 包含 FAQ 板块，有 aria-expanded 或 data-open 手风琴交互"
+        },
+        {
+          "id": "cta-section",
+          "description": "index.html 包含独立的 CTA 板块（不是 hero 内的按钮）"
+        },
+        {
+          "id": "gsap-loaded",
+          "description": "index.html 中包含 GSAP CDN script 标签"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "aurora-saas-en",
+      "prompt": "Build a landing page for Aurora, a SaaS analytics platform. Style: let the AI choose the best city. Sections: Hero (product demo type), Features (bento grid), Testimonials, Pricing with monthly/annual toggle, FAQ, CTA. Nav: bottom magnetic pill.",
+      "expected_output": "Multi-file landing page. AI selects a city style autonomously and explains the choice. Product demo hero with step-through. Bento grid features. Pricing with billing toggle. English copy throughout.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "multifile-output",
+          "description": "Output contains index.html, style.css, main.js, assets/icons.svg"
+        },
+        {
+          "id": "ai-chose-city",
+          "description": "Agent explicitly states which city it chose and why (not __AI_CHOOSE__ left as placeholder)"
+        },
+        {
+          "id": "demo-hero",
+          "description": "index.html contains a product demo / step-through hero section with multiple steps"
+        },
+        {
+          "id": "bento-grid",
+          "description": "style.css contains grid-template with span or grid-column: span for bento layout"
+        },
+        {
+          "id": "billing-toggle",
+          "description": "index.html contains monthly/annual toggle with data-monthly and data-annual attributes"
+        },
+        {
+          "id": "english-copy",
+          "description": "index.html body text is primarily in English (not placeholder lorem ipsum)"
+        },
+        {
+          "id": "two-typefaces",
+          "description": "style.css defines at least two distinct font-family values (--font-display and --font-body)"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "monet-non-city-description",
+      "prompt": "帮我做一个艺术画廊的落地页，品牌叫 Lumière Gallery。不要选城市，我想要的感觉是：莫奈睡莲 + 清晨薄雾 + 亚麻布质感。需要 Hero、展览介绍、艺术家评价、联系方式。Nav 选全屏爆开式。",
+      "expected_output": "Multi-file landing page. Non-city description processed through imagery-derivation.md to derive a custom design token system. Monet-inspired soft palette. Full-screen blast menu nav. Linen texture background.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "multifile-output",
+          "description": "输出包含 index.html、style.css、main.js、assets/icons.svg 四个文件"
+        },
+        {
+          "id": "custom-palette",
+          "description": "style.css 中的颜色不是任何已有城市的默认配色（非直接复制 city-styles.md 的某个城市）"
+        },
+        {
+          "id": "soft-muted-colors",
+          "description": "style.css --accent 值是柔和色调（非高饱和霓虹色），符合莫奈/薄雾意境"
+        },
+        {
+          "id": "blast-menu",
+          "description": "main.js 包含全屏菜单动画（clipPath inset 或类似的 overlay 展开）"
+        },
+        {
+          "id": "texture-present",
+          "description": "style.css 包含 background-image 纹理（feTurbulence、repeating-linear-gradient 或类似）"
+        },
+        {
+          "id": "gsap-loaded",
+          "description": "index.html 中包含 GSAP CDN script 标签"
         }
       ]
     }
