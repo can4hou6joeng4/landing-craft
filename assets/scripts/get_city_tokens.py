@@ -35,14 +35,27 @@ VAR_MAP = {
 }
 
 
+CJK_ALIASES = {
+    "東京": "东京", "東京夜": "东京夜",
+    "パリ": "巴黎", "ソウル": "首尔", "ベイルート": "贝鲁特",
+    "キョウト": "���都", "ニューヨーク": "纽约", "ベルリン": "柏林",
+    "シンガポール": "新加坡", "ドバイ": "迪拜", "ムンバイ": "孟买",
+    "香港": "香港", "台北": "台北", "大阪": "大阪",
+}
+
+
 def find_city_section(text: str, query: str) -> str | None:
     """Return the markdown text of the matching city section, or None."""
-    query_lower = query.lower().strip()
+    query_clean = query.strip()
+    query_lower = query_clean.lower()
+    # Resolve CJK variant aliases (e.g. Japanese 東京 → simplified 东京)
+    resolved = CJK_ALIASES.get(query_clean, query_clean)
+    candidates = {query_lower, resolved.lower()}
     # Split on ## headings (city sections)
     sections = re.split(r"\n(?=## \d+\.)", text)
     for section in sections:
-        first_line = section.split("\n")[0]
-        if query_lower in first_line.lower():
+        first_line = section.split("\n")[0].lower()
+        if any(c in first_line for c in candidates):
             return section
     return None
 
