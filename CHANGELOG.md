@@ -2,6 +2,16 @@
 
 本项目的所有重要变更记录。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.1.0] - 2026-04-14
+
+### 新增
+
+- 全部 8 个 GSAP 动画函数支持 prefers-reduced-motion 无障碍降级
+- Design Laws 新增响应式布局、SEO 基线、Footer 必须、无障碍基线四条规则
+- 3 种 Footer 板块变体（极简单行/多列链接/杂志编辑型）
+- Step 5 生成完成后自动在浏览器中打开预览
+- 预览页面语言根据用户对话语言自动检测
+
 ## [1.0.0] - 2026-04-13
 
 ### 新增
