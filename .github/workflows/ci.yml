@@ -88,7 +88,7 @@ jobs:
           import json
           d = json.load(open('evals/evals.json'))
           assert d['skill_name'] == 'citycraft', f'Wrong skill name: {d[\"skill_name\"]}'
-          assert len(d['evals']) >= 6, f'Too few evals: {len(d[\"evals\"])}'
+          assert len(d['evals']) >= 9, f'Too few evals: {len(d[\"evals\"])}'
           print(f'Evals: {len(d[\"evals\"])} cases OK')
           "
 

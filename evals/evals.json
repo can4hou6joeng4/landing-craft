@@ -222,6 +222,89 @@
           "description": "index.html 中包含 GSAP CDN script 标签"
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "multipage-portfolio",
+      "prompt": "帮我做一个作品集网站，品牌叫 PixelFrame，是个摄影师个人站。风格选里斯本。需要首页 Hero + 作品集画廊 + 关于我 + 联系方式。要求生成多页面站点，包含 about.html 和 contact.html。Nav 选磁性胶囊。",
+      "expected_output": "Multi-page site with Lisbon style. index.html + about.html + contact.html generated. Gallery section on index. Magnetic pill nav shared across pages.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "multipage-output",
+          "description": "输出包含 index.html、about.html、contact.html 三个 HTML 文件"
+        },
+        {
+          "id": "shared-nav",
+          "description": "about.html 和 contact.html 包含与 index.html 相同结构的导航栏"
+        },
+        {
+          "id": "gallery-section",
+          "description": "index.html 包含画廊或作品集板块（gallery/portfolio class 或 grid 布局）"
+        },
+        {
+          "id": "consistent-design-tokens",
+          "description": "所有页面共享相同的 CSS 变量（--bg、--accent 等值一致）"
+        },
+        {
+          "id": "gsap-loaded",
+          "description": "index.html 中包含 GSAP CDN script 标签"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "dark-mode-toggle-ja",
+      "prompt": "ランディングページを作って。製品は NightOwl という睡眠トラッカーアプリ。東京ナイトスタイルで。ダークモード切替を含めて。セクション：Hero、機能紹介、料金、CTA。ナビは全画面展開式。",
+      "expected_output": "Landing page with Tokyo Night style. Dark mode toggle included. Full-screen blast nav. Japanese product copy. Pricing section.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "multifile-output",
+          "description": "Output contains index.html, style.css, main.js, assets/icons.svg"
+        },
+        {
+          "id": "dark-mode-toggle",
+          "description": "main.js or index.html contains dark mode toggle logic (data-theme switching)"
+        },
+        {
+          "id": "dark-background-default",
+          "description": "style.css :root uses dark background color (Tokyo Night starts dark)"
+        },
+        {
+          "id": "fullscreen-nav",
+          "description": "Full-screen overlay nav with open/close animation"
+        },
+        {
+          "id": "pricing-section",
+          "description": "index.html contains pricing section with at least 2 tiers"
+        },
+        {
+          "id": "japanese-trigger",
+          "description": "Agent correctly activated from Japanese trigger phrase"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "minimal-input-resilience",
+      "prompt": "landing page for Acme",
+      "expected_output": "Agent asks clarifying questions about the product or proceeds with reasonable defaults. Should not crash or produce empty output from minimal input.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "no-crash",
+          "description": "Agent responds coherently without errors or empty output"
+        },
+        {
+          "id": "asks-or-generates",
+          "description": "Agent either asks follow-up questions about Acme or generates a page with sensible defaults"
+        },
+        {
+          "id": "city-selection-offered",
+          "description": "Agent offers city style selection or auto-selects with explanation"
+        }
+      ]
     }
   ]
 }
