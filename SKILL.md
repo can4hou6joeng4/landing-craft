@@ -295,11 +295,12 @@ Now read the staging files (`_sections.html`, `_texture.css`, `_gsap-base.js`, a
 #### 4b — Section Variant Reference
 
 Common page sequences:
-- SaaS tool: Hero D → Features C → Features A → Testimonials A → Pricing → FAQ A → CTA
-- Agency portfolio: Hero A → Features B → Testimonials C → CTA
-- Developer tool: Hero B → Features C → Features A → Testimonials A → Pricing → FAQ B → CTA
-- Luxury product: Hero C → Features B → Testimonials B → CTA
-- B2C app: Hero E → Features E → Testimonials F → CTA
+- SaaS tool: Hero D → Features C → Features A → Testimonials A → Pricing → FAQ A → Newsletter → CTA → Footer B
+- Agency portfolio: Hero A → Features B → Testimonials C → Contact Inline → CTA → Footer C
+- Developer tool: Hero B → Features C → Features A → Testimonials A → Pricing → FAQ B → Newsletter → CTA → Footer B
+- Luxury product: Hero C → Features B → Testimonials B → CTA → Footer C
+- B2C app: Hero E → Features E → Testimonials F → Waitlist → CTA → Footer A
+- Startup pre-launch: Hero G → Features D → Waitlist → FAQ A → Footer A
 
 | If the user needs... | Use this template | Variant |
 |---------------------|-------------------|---------|
