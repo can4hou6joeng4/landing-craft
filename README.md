@@ -30,7 +30,7 @@ your-product-landing/
 - **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
 - **3 form sections** — newsletter subscribe, waitlist signup, inline contact form
 - **Transition picker** — geometric / organic / blend / minimal section dividers
-- **One-click deploy** — optional Netlify deployment with preview URL, then production
+- **One-click deploy** — optional deployment to Netlify, Vercel, or GitHub Pages
 - **Python 3.6+ compatible** — works on macOS default Python (3.9)
 - **Cross-platform** — Python launcher + PowerShell fallback for Windows
 
