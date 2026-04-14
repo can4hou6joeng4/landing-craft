@@ -41,11 +41,11 @@
 
     .hero { min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; padding: 4rem 0; position: relative; }
     .hero-inner { max-width: 720px; }
-    .hero-eyebrow { font-variant: small-caps; font-size: 0.9rem; color: var(--accent); letter-spacing: 0.08em; font-weight: 500; margin-bottom: 1.5rem; opacity: 0; }
-    .hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.08; font-weight: 400; margin-bottom: 1.5rem; opacity: 0; }
+    .hero-eyebrow { font-variant: small-caps; font-size: 0.9rem; color: var(--accent); letter-spacing: 0.08em; font-weight: 500; margin-bottom: 1.5rem; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.08; font-weight: 400; margin-bottom: 1.5rem; }
     .hero h1 em { font-style: italic; color: var(--accent); }
-    .hero p { font-size: clamp(1rem, 1.3vw, 1.15rem); color: var(--ink-muted); line-height: 1.7; max-width: 540px; margin-bottom: 2rem; opacity: 0; }
-    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; opacity: 0; }
+    .hero p { font-size: clamp(1rem, 1.3vw, 1.15rem); color: var(--ink-muted); line-height: 1.7; max-width: 540px; margin-bottom: 2rem; }
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
     .hero-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; background: var(--accent); color: var(--bg); border: none; border-radius: 100px; font-family: var(--font-body); font-weight: 600; font-size: 1rem; cursor: pointer; min-height: 48px; transition: background 0.3s, transform 0.2s; text-decoration: none; }
     .hero-cta:hover { background: var(--accent-hover); color: var(--bg); }
     .hero-cta:active { transform: scale(0.97); }
@@ -58,7 +58,7 @@
     .stats { padding: 4rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
     @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-    .stat-item { opacity: 0; }
+    .stat-item { }
     .stat-num { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--ink); line-height: 1; }
     .stat-num span { color: var(--accent); }
     .stat-label { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.4rem; }
@@ -82,7 +82,7 @@
     .section-title em { font-style: italic; color: var(--accent); }
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
-    .feature-card { padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); transition: border-color 0.3s, transform 0.3s; opacity: 0; }
+    .feature-card { padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); transition: border-color 0.3s, transform 0.3s; }
     .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .feature-card:first-child { border-color: var(--accent); }
     .feature-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
@@ -208,11 +208,13 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined') return;
       gsap.registerPlugin(ScrollTrigger);
 
-      // Hero entrance
+      // Hero entrance — set opacity:0 via JS only when GSAP is ready
       if (!prefersReducedMotion) {
-        gsap.from('.js-hero', { y: 32, opacity: 0, filter: 'blur(6px)', duration: 0.9, ease: 'power3.out', stagger: 0.15, clearProps: 'filter' });
+        gsap.set('.js-hero', { opacity: 0 });
+        gsap.from('.js-hero', { y: 32, opacity: 0, filter: 'blur(6px)', duration: 0.9, ease: 'power3.out', stagger: 0.15, clearProps: 'filter,opacity' });
       } else {
         gsap.set('.js-hero', { opacity: 1 });
       }
@@ -220,6 +222,7 @@
       // Stats count-up + reveal
       document.querySelectorAll('.stat-item').forEach((item, i) => {
         if (!prefersReducedMotion) {
+          gsap.set(item, { opacity: 0 });
           gsap.from(item, { y: 30, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out',
             scrollTrigger: { trigger: item, start: 'top 88%', toggleActions: 'play none none none' }
           });
@@ -239,6 +242,7 @@
       // Feature cards stagger
       document.querySelectorAll('.feature-card').forEach((card, i) => {
         if (!prefersReducedMotion) {
+          gsap.set(card, { opacity: 0 });
           gsap.from(card, { y: 40, opacity: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out',
             scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' }
           });
