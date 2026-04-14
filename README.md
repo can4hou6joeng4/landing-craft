@@ -1,6 +1,6 @@
 <div align="center">
 
-# Landing Craft
+# 🏙️ Landing Craft
 
 **Turn any product idea into a stunning landing page — powered by 57 city-inspired design systems.**
 
@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/can4hou6joeng4/landing-craft?style=social)](https://github.com/can4hou6joeng4/landing-craft)
 
-[Live Demo](https://can4hou6joeng4.github.io/landing-craft/) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [中文文档](README.zh-CN.md)
+[🌐 Live Demo](https://can4hou6joeng4.github.io/landing-craft/) · [📋 Changelog](CHANGELOG.md) · [🤝 Contributing](CONTRIBUTING.md) · [🇨🇳 中文文档](README.zh-CN.md)
 
 </div>
 
@@ -19,11 +19,11 @@ A [Claude Code](https://claude.ai/claude-code) skill. Describe your product, pic
 
 > Not another card-grid template. Every output is a design artifact.
 
-## Why Landing Craft?
+## 💡 Why Landing Craft?
 
 Most generators give you the same Bootstrap-like layout with swapped colors. Landing Craft takes a different approach — **each of the 57 city styles is a complete design system**: unique fonts, palettes, textures, motion curves, and icon aesthetics. Kyoto feels nothing like Lagos, and Lagos feels nothing like Palm Springs.
 
-## Quick Start
+## ⚡ Quick Start
 
 ```bash
 npx skills add can4hou6joeng4/landing-craft -a claude-code -g -y
@@ -45,28 +45,28 @@ your-product/
 └── assets/icons.svg  # SVG sprite in the city aesthetic
 ```
 
-## Features
+## ✨ Features
 
-**Design System**
+🎨 **Design System**
 
 - 57 city aesthetics — unique fonts, colors, textures, and motion per city
 - 3 color tones — original city / dark luxe / bright modern
-- Dark mode toggle with localStorage persistence
+- 🌓 Dark mode toggle with localStorage persistence
 
-**Page Sections**
+🧩 **Page Sections**
 
 - 7 hero · 6 features · 6 testimonials · 4 nav styles
 - 3 footer · 3 form · 6 extra sections (team, stats, gallery, timeline...)
 - 4 section divider styles — geometric / organic / blend / minimal
 
-**Workflow**
+🔄 **Workflow**
 
-- Interactive browser-based city picker — no CLI menus
-- Multi-page support — About, Contact, Blog sub-pages
-- One-click deploy to Netlify, Vercel, or GitHub Pages
-- Cross-platform — Python 3.6+ / macOS / Windows PowerShell
+- 🖥️ Interactive browser-based city picker — no CLI menus
+- 📄 Multi-page support — About, Contact, Blog sub-pages
+- 🚀 One-click deploy to Netlify, Vercel, or GitHub Pages
+- 💻 Cross-platform — Python 3.6+ / macOS / Windows PowerShell
 
-## How It Works
+## 🛠️ How It Works
 
 1. **Describe** — product name + one-line pitch
 2. **Pick** — browse 57 city style cards in your browser
@@ -75,14 +75,17 @@ your-product/
 5. **Preview** — auto-opens in browser
 6. **Deploy** — optional one-click publish
 
-## Trigger Phrases
+## 🗣️ Trigger Phrases
 
 ```
 帮我做一个落地页 · 做个首页 · 产品展示页 · 活动页 · 营销页 · 官网首页
 landing page · product page · promo page · make me a homepage
 ```
 
-## Project Structure
+## 📂 Project Structure
+
+<details>
+<summary><kbd>Expand file tree</kbd></summary>
 
 ```
 SKILL.md                            # Skill definition
@@ -115,14 +118,16 @@ evals/
 └── evals.json                      # Evaluation test cases
 ```
 
-## Design Philosophy
+</details>
 
-1. **No `#ffffff` backgrounds** — warm neutrals, cool tints, or deep darks
-2. **Two typefaces minimum** — display headlines + clean sans body
-3. **SVG as design core** — not decorative sprinkles
-4. **GSAP depth** — parallax layers, sticky panels, staggered reveals
-5. **No clone grids** — every section has visual hierarchy
+## 🎯 Design Philosophy
 
-## License
+1. 🚫 **No `#ffffff` backgrounds** — warm neutrals, cool tints, or deep darks
+2. 🔤 **Two typefaces minimum** — display headlines + clean sans body
+3. 🖼️ **SVG as design core** — not decorative sprinkles
+4. 🎞️ **GSAP depth** — parallax layers, sticky panels, staggered reveals
+5. 📐 **No clone grids** — every section has visual hierarchy
+
+## 📄 License
 
 [MIT](LICENSE)

@@ -1,6 +1,6 @@
 <div align="center">
 
-# Landing Craft
+# 🏙️ Landing Craft
 
 **描述你的产品，选择一座城市的美学，生成一个惊艳的落地页。**
 
@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/can4hou6joeng4/landing-craft?style=social)](https://github.com/can4hou6joeng4/landing-craft)
 
-[在线演示](https://can4hou6joeng4.github.io/landing-craft/) · [更新日志](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md) · [English](README.md)
+[🌐 在线演示](https://can4hou6joeng4.github.io/landing-craft/) · [📋 更新日志](CHANGELOG.md) · [🤝 贡献指南](CONTRIBUTING.md) · [🇬🇧 English](README.md)
 
 </div>
 
@@ -19,11 +19,11 @@
 
 > 不是千篇一律的卡片网格模板，每一个输出都是设计作品。
 
-## 为什么选择 Landing Craft？
+## 💡 为什么选择 Landing Craft？
 
 大多数落地页生成器只是换了配色的 Bootstrap 模板。Landing Craft 的思路不同——**57 种城市风格，每一种都是完整的设计系统**：独立的字体、色板、纹理、动效曲线和图标美学。京都和拉各斯完全不同，拉各斯和棕榈泉也截然不同。
 
-## 快速开始
+## ⚡ 快速开始
 
 ```bash
 npx skills add can4hou6joeng4/landing-craft -a claude-code -g -y
@@ -45,28 +45,28 @@ npx skills add can4hou6joeng4/landing-craft -a claude-code -g -y
 └── assets/icons.svg  # 匹配城市美学的 SVG 精灵图
 ```
 
-## 核心特性
+## ✨ 核心特性
 
-**设计系统**
+🎨 **设计系统**
 
 - 57 种城市美学——每座城市拥有独特的字体、配色、纹理和动效
 - 3 种色调——城市原色 / 暗黑奢华 / 明亮现代
-- 暗色模式切换，localStorage 持久化
+- 🌓 暗色模式切换，localStorage 持久化
 
-**页面板块**
+🧩 **页面板块**
 
 - 7 种 Hero · 6 种功能 · 6 种评价 · 4 种导航
 - 3 种页脚 · 3 种表单 · 6 种扩展板块（团队、统计、画廊、时间线...）
 - 4 种板块过渡风格——几何锐利 / 有机柔和 / 渐变融合 / 极简线条
 
-**工作流**
+🔄 **工作流**
 
-- 浏览器端交互式城市选择器——没有命令行菜单
-- 多页面支持——关于、联系、博客子页面
-- 一键部署到 Netlify、Vercel 或 GitHub Pages
-- 跨平台——Python 3.6+ / macOS / Windows PowerShell
+- 🖥️ 浏览器端交互式城市选择器——没有命令行菜单
+- 📄 多页面支持——关于、联系、博客子页面
+- 🚀 一键部署到 Netlify、Vercel 或 GitHub Pages
+- 💻 跨平台——Python 3.6+ / macOS / Windows PowerShell
 
-## 工作流程
+## 🛠️ 工作流程
 
 1. **描述** — 产品名称 + 一句话介绍
 2. **选择** — 在浏览器中浏览 57 张城市风格卡片
@@ -75,14 +75,17 @@ npx skills add can4hou6joeng4/landing-craft -a claude-code -g -y
 5. **预览** — 自动在浏览器中打开
 6. **部署** — 可选一键发布
 
-## 触发词
+## 🗣️ 触发词
 
 ```
 帮我做一个落地页 · 做个首页 · 产品展示页 · 活动页 · 营销页 · 官网首页
 landing page · product page · promo page · make me a homepage
 ```
 
-## 项目结构
+## 📂 项目结构
+
+<details>
+<summary><kbd>展开文件树</kbd></summary>
 
 ```
 SKILL.md                            # 技能定义文件
@@ -115,14 +118,16 @@ evals/
 └── evals.json                      # 评估测试用例
 ```
 
-## 设计哲学
+</details>
 
-1. **禁止纯白背景** — 暖中性色、冷灰调或深暗色
-2. **至少两种字体** — 展示用标题字体 + 干净的无衬线正文
-3. **SVG 作为设计核心** — 不是装饰点缀
-4. **GSAP 空间深度** — 视差层、粘性面板、交错揭示
-5. **禁止克隆网格** — 每个板块都有视觉层级
+## 🎯 设计哲学
 
-## 许可证
+1. 🚫 **禁止纯白背景** — 暖中性色、冷灰调或深暗色
+2. 🔤 **至少两种字体** — 展示用标题字体 + 干净的无衬线正文
+3. 🖼️ **SVG 作为设计核心** — 不是装饰点缀
+4. 🎞️ **GSAP 空间深度** — 视差层、粘性面板、交错揭示
+5. 📐 **禁止克隆网格** — 每个板块都有视觉层级
+
+## 📄 许可证
 
 [MIT](LICENSE)
