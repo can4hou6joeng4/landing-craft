@@ -74,6 +74,11 @@ jobs:
             python assets/scripts/extract_variant.py assets/sections/form-variants.html $v > /dev/null && PASS=$((PASS+1))
           done
 
+          for v in TEAM STATS LOGO_SCROLL GALLERY INTEGRATIONS TIMELINE; do
+            TOTAL=$((TOTAL+1))
+            python assets/scripts/extract_variant.py assets/sections/extra-variants.html $v > /dev/null && PASS=$((PASS+1))
+          done
+
           echo "$PASS/$TOTAL variants OK"
           [ "$PASS" -eq "$TOTAL" ] || exit 1
 

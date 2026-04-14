@@ -31,6 +31,7 @@ your-product-landing/
 - **Dark mode toggle** — runtime light/dark switching with localStorage persistence
 - **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
 - **3 form sections** — newsletter subscribe, waitlist signup, inline contact form
+- **6 extra sections** — team cards, stats numbers, logo scroll, gallery, integrations, timeline
 - **Transition picker** — geometric / organic / blend / minimal section dividers
 - **One-click deploy** — optional deployment to Netlify, Vercel, or GitHub Pages
 - **Python 3.6+ compatible** — works on macOS default Python (3.9)

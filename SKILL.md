@@ -44,6 +44,7 @@ This skill comes with pre-built assets. Read and use them directly:
 | `assets/sections/footer-variants.html` | 3 Footer templates (极简单行/多列链接/杂志编辑) | Step 4: pick based on page complexity and brand tone |
 | `assets/sections/page-variants.html` | 3 Sub-page templates (关于我们/联系方式/博客列表) | Step 4: when user requests multi-page site |
 | `assets/sections/form-variants.html` | 3 Form section templates (邮件订阅/等待列表/内嵌联系表单) | Step 4: when page needs a form section |
+| `assets/sections/extra-variants.html` | 6 Extra section templates (团队/数据统计/Logo滚动/作品集/技术集成/时间线) | Step 4: pick based on product type and content needs |
 | `references/product-demo-hero.md` | Product demo hero principles + scene design guide | Read when user wants to show product workflow in hero (see Step 3/4) |
 
 **The quality guarantee of this skill comes from using these assets.** They encode specific design decisions that make outputs distinct. Don't describe what to do — copy the code and adapt it.
@@ -338,6 +339,12 @@ Common page sequences:
 | Form — Newsletter subscribe | 邮件订阅 | NEWSLETTER (form-variants.html) |
 | Form — Waitlist signup | 等待列表 | WAITLIST (form-variants.html) |
 | Form — Inline contact form | 内嵌联系表单 | CONTACT_INLINE (form-variants.html) |
+| Team member cards | 团队成员 | TEAM (extra-variants.html) |
+| Stats / Numbers showcase | 数据统计 | STATS (extra-variants.html) |
+| Logo infinite scroll | 品牌滚动墙 | LOGO_SCROLL (extra-variants.html) |
+| Gallery / Portfolio grid | 作品集展示 | GALLERY (extra-variants.html) |
+| Integrations / Tech stack | 技术集成 | INTEGRATIONS (extra-variants.html) |
+| Timeline / Milestones | 时间线 | TIMELINE (extra-variants.html) |
 
 #### 4c — Write the Output Files
 
