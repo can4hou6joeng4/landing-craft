@@ -1,5 +1,7 @@
 # Landing Craft
 
+[![CI](https://github.com/can4hou6joeng4/landing-craft/actions/workflows/ci.yml/badge.svg)](https://github.com/can4hou6joeng4/landing-craft/actions/workflows/ci.yml)
+
 A [Claude Code](https://claude.ai/claude-code) skill that generates **visually striking landing pages** with 57 city-inspired design systems.
 
 > Not your typical card-grid template. Every output is a design artifact — clip-path dividers, GSAP scroll animations, SVG textures, real depth and layering.
