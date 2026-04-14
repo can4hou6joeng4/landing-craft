@@ -35,7 +35,7 @@ This skill comes with pre-built assets. Read and use them directly:
 | `assets/style-preview-template.html` | 57-city style preview cards | Step 2: `sed` fill `__PRODUCT_NAME__` + `__PRODUCT_HEADLINE__`, save as `style-preview.html`, open |
 | `assets/options-preview-template.html` | Interactive demos: nav styles, color variants, transition styles, hero/features/testimonials variants | Step 3: `sed` fill city color tokens + product name, save as `options-preview.html`, open |
 | `assets/textures.css` | 6 CSS texture classes (`.texture-kyoto`, `.texture-paris`, `.texture-tokyo`, etc.) | Copy the matching class into `style.css` |
-| `assets/gsap-snippets.js` | 8 GSAP animation functions (blur entrance, line reveal, parallax, sticky steps, blast menu, magnetic pill, hero demo stepper, animated count) | Copy the relevant functions into `main.js` |
+| `assets/gsap-snippets.js` | 9 GSAP animation + utility functions (blur entrance, line reveal, parallax, sticky steps, blast menu, magnetic pill, hero demo stepper, animated count, dark mode toggle) | Copy the relevant functions into `main.js` |
 | `assets/clip-paths.css` | 8 clip-path divider classes (`.clip-diagonal-br`, `.clip-parallelogram`, `.clip-arc-bottom`, etc.) | Use at least 2 in `style.css` for section dividers |
 | `assets/sections/hero-variants.html` | 7 Hero section templates (全屏铺张/分屏张力/极简下降/产品演示/文字爆炸/杂志撕裂/弹出卡片) | Step 4: pick the variant matching the user's typography preference, copy and adapt |
 | `assets/sections/features-variants.html` | 6 Features section templates (大数字/交替展示/时间线/本托格子/水平滚动/问答展开) | Step 4: pick based on content type (stats → big number, how-it-works → timeline) |
@@ -355,9 +355,10 @@ Common page sequences:
 
 **style.css** — Write with the Write tool. Structure:
 1. `:root` block — full design token system: colors from `$CITY_*` tokens, chosen fonts, spacing scale, radii. This is the only part the model writes from scratch.
-2. Paste texture + clip-path CSS from `_texture.css`
-3. Nav CSS matching the selected nav style (from `references/nav-catalog.md`)
-4. Layout and typography overrides — only what differs from section defaults
+2. `[data-theme="dark"]` block — dark variant tokens using `$CITY_DARK_*` values from Step 3. This enables runtime dark mode toggle.
+3. Paste texture + clip-path CSS from `_texture.css`
+4. Nav CSS matching the selected nav style (from `references/nav-catalog.md`)
+5. Layout and typography overrides — only what differs from section defaults
 
 `clamp()` for ALL headline font sizes:
 - Hero 主标题：`clamp(2.8rem, 7vw, 7rem)` — 铺张型也不超过 7rem
@@ -374,7 +375,8 @@ Do NOT add comments to style.css — they consume tokens and add no value to the
    - `initParallax()` — at least 2 layers at different speeds
    - Section heading reveals on viewport entry
    - `initStickySteps()` OR `initBlastMenu()` OR `initMagneticPill()` — matching nav/layout
-3. Call sequence at bottom; `ScrollTrigger.refresh()` after fonts load
+3. `initDarkModeToggle(".theme-toggle")` — enable dark/light mode switching
+4. Call sequence at bottom; `ScrollTrigger.refresh()` after fonts load
 
 Do NOT add comments to main.js.
 

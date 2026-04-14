@@ -322,3 +322,37 @@ function animateCount(el, target, duration, suffix) {
 }
 // Example: animateCount(slot.querySelector('.views-num'), 84201, 1.8)
 // Example: animateCount(slot.querySelector('.pct'), 96, 1.2, '%')
+
+
+// ─── 9. DARK MODE TOGGLE ─────────────────────────────────────
+// Toggles between light/dark color schemes by swapping CSS custom properties.
+// Requires: :root with light tokens, [data-theme="dark"] with dark tokens in style.css.
+// Persists choice to localStorage.
+//
+// CSS required in style.css:
+//   :root { --bg: #fdf9f2; --bg-surface: #f7f0e6; --ink: #1a1510; ... }
+//   [data-theme="dark"] { --bg: #0e0c09; --bg-surface: #1e1b16; --ink: #f2ede4; ... }
+//
+// HTML: <button class="theme-toggle" aria-label="Toggle dark mode">
+//         <svg class="icon-sun" ...></svg>
+//         <svg class="icon-moon" ...></svg>
+//       </button>
+function initDarkModeToggle(toggleSelector) {
+  const toggle = document.querySelector(toggleSelector);
+  if (!toggle) return;
+
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = stored || (prefersDark ? 'dark' : 'light');
+
+  root.setAttribute('data-theme', initial);
+
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+// Example: initDarkModeToggle(".theme-toggle")

@@ -26,6 +26,7 @@ your-product-landing/
 - **6 testimonial styles** — compact grid, magazine, masonry, horizontal scroll, chat bubbles, avatar wall
 - **4 nav archetypes** — full-screen blast, magnetic pill, vertical side rail, split centered
 - **3 color tones** — original city, dark luxe, bright modern
+- **Dark mode toggle** — runtime light/dark switching with localStorage persistence
 - **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
 - **3 form sections** — newsletter subscribe, waitlist signup, inline contact form
 - **Transition picker** — geometric / organic / blend / minimal section dividers
