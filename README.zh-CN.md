@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/can4hou6joeng4/landing-craft?style=social)](https://github.com/can4hou6joeng4/landing-craft)
 
-[🌐 在线演示](https://can4hou6joeng4.github.io/landing-craft/) · [📋 更新日志](CHANGELOG.md) · [🤝 贡献指南](CONTRIBUTING.md) · [🇬🇧 English](README.md)
+[🌐 在线演示](https://can4hou6joeng4.github.io/landing-craft/) · [📋 更新日志](CHANGELOG.md) · [🤝 贡献指南](CONTRIBUTING.md) · [🇬🇧 English](README.md) · [🇯🇵 日本語](README.ja.md)
 
 </div>
 
