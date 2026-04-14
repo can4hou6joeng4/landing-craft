@@ -26,6 +26,7 @@ your-product-landing/
 - **6 testimonial styles** — compact grid, magazine, masonry, horizontal scroll, chat bubbles, avatar wall
 - **4 nav archetypes** — full-screen blast, magnetic pill, vertical side rail, split centered
 - **3 color tones** — original city, dark luxe, bright modern
+- **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
 - **Transition picker** — geometric / organic / blend / minimal section dividers
 - **Python 3.6+ compatible** — works on macOS default Python (3.9)
 - **Cross-platform** — Python launcher + PowerShell fallback for Windows

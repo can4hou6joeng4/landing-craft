@@ -42,6 +42,7 @@ This skill comes with pre-built assets. Read and use them directly:
 | `assets/sections/testimonial-variants.html` | 6 Testimonials templates (紧凑卡片/单列引用/马赛克拼贴/滚动横条/对话气泡/头像墙) | Step 4: pick based on testimonial volume and visual style preference |
 | `assets/sections/conversion-variants.html` | Pricing table, FAQ, brand wall, power CTA | Step 4: copy relevant section, all use CSS custom properties |
 | `assets/sections/footer-variants.html` | 3 Footer templates (极简单行/多列链接/杂志编辑) | Step 4: pick based on page complexity and brand tone |
+| `assets/sections/page-variants.html` | 3 Sub-page templates (关于我们/联系方式/博客列表) | Step 4: when user requests multi-page site |
 | `references/product-demo-hero.md` | Product demo hero principles + scene design guide | Read when user wants to show product workflow in hero (see Step 3/4) |
 
 **The quality guarantee of this skill comes from using these assets.** They encode specific design decisions that make outputs distinct. Don't describe what to do — copy the code and adapt it.
@@ -193,9 +194,28 @@ Output into `{product-name}-landing/`:
 ├── index.html
 ├── style.css
 ├── main.js
+├── about.html          ← optional sub-pages
+├── contact.html        ← optional sub-pages
+├── blog.html           ← optional sub-pages
 └── assets/
     └── icons.svg
 ```
+
+**Multi-page support:** If the user requests sub-pages (about, contact, blog), generate them as separate HTML files in the same directory. Each sub-page:
+- Shares the same `style.css`, `main.js`, and `assets/icons.svg` as `index.html`
+- Uses the same nav (with links updated to point to sibling pages) and footer
+- Content comes from `assets/sections/page-variants.html` (variants: `ABOUT`, `CONTACT`, `BLOG`)
+- Has its own `<title>` and `<meta>` tags following the SEO baseline (Design Law 11)
+
+Extract sub-page content in the Bash Assembly step:
+```bash
+python3 "$_SKILL_DIR/assets/scripts/extract_variant.py" \
+  "$_SKILL_DIR/assets/sections/page-variants.html" ABOUT >> "$_OUT/_pages.html"
+python3 "$_SKILL_DIR/assets/scripts/extract_variant.py" \
+  "$_SKILL_DIR/assets/sections/page-variants.html" CONTACT >> "$_OUT/_pages.html"
+```
+
+Read `_pages.html` alongside other staging files, then write each sub-page as a complete HTML document wrapping the nav + page content + footer.
 
 #### 4a — Bash Assembly (do this first, before writing any file)
 
@@ -289,6 +309,9 @@ Common page sequences:
 | Footer — minimal single row | 极简单行 | A (footer-variants.html) |
 | Footer — multi-column links | 多列链接 | B (footer-variants.html) |
 | Footer — editorial with watermark | 杂志编辑型 | C (footer-variants.html) |
+| Sub-page — About / Brand story | 关于我们 | ABOUT (page-variants.html) |
+| Sub-page — Contact with form | 联系方式 | CONTACT (page-variants.html) |
+| Sub-page — Blog post listing | 博客列表 | BLOG (page-variants.html) |
 
 #### 4c — Write the Output Files
 
