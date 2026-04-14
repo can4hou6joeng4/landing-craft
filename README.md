@@ -1,8 +1,12 @@
 # Landing Craft
 
 [![CI](https://github.com/can4hou6joeng4/landing-craft/actions/workflows/ci.yml/badge.svg)](https://github.com/can4hou6joeng4/landing-craft/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/v/release/can4hou6joeng4/landing-craft)](https://github.com/can4hou6joeng4/landing-craft/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A [Claude Code](https://claude.ai/claude-code) skill that generates **visually striking landing pages** with 57 city-inspired design systems.
+
+**[Live Demo](https://can4hou6joeng4.github.io/landing-craft/)** | **[Changelog](CHANGELOG.md)** | **[Contributing](CONTRIBUTING.md)**
 
 > Not your typical card-grid template. Every output is a design artifact — clip-path dividers, GSAP scroll animations, SVG textures, real depth and layering.
 
