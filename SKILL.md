@@ -370,6 +370,42 @@ open "$_OUT/index.html" 2>/dev/null || xdg-open "$_OUT/index.html" 2>/dev/null |
 
 Tell the user: "落地页已生成并在浏览器中打开。如果需要调整任何细节，随时告诉我。"
 
+### Step 6: Deploy (Optional)
+
+After the user confirms the page looks good, ask if they want to deploy it online:
+
+> "需要我帮你把这个站点部署到线上吗？可以一键发布到 Netlify，几秒钟就能拿到公开链接。"
+
+If the user agrees, deploy using the Netlify CLI:
+
+```bash
+cd "$_OUT"
+
+# Check if netlify CLI is available
+if ! command -v netlify &>/dev/null && ! npx netlify --version &>/dev/null 2>&1; then
+  echo "Installing Netlify CLI..."
+  npm install -g netlify-cli
+fi
+
+# Deploy as a new site (draft first for preview)
+npx netlify deploy --dir=. --message="Landing page deploy from citycraft"
+```
+
+This creates a **draft deploy** with a preview URL. Tell the user the preview URL and ask:
+
+> "这是预览链接：[URL]。确认没问题的话，我帮你发布到正式环境？"
+
+If confirmed, deploy to production:
+
+```bash
+npx netlify deploy --dir=. --prod --message="Production deploy from citycraft"
+```
+
+**Notes:**
+- First-time users will be prompted to log in to Netlify via browser — this is expected
+- The `--dir=.` flag deploys the current directory as a static site, no build step needed
+- If the user already has a Netlify site they want to update, they can run `npx netlify link` first
+
 ---
 
 ## Design Laws (Never Break These)

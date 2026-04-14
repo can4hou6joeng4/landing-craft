@@ -28,6 +28,7 @@ your-product-landing/
 - **3 color tones** — original city, dark luxe, bright modern
 - **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
 - **Transition picker** — geometric / organic / blend / minimal section dividers
+- **One-click deploy** — optional Netlify deployment with preview URL, then production
 - **Python 3.6+ compatible** — works on macOS default Python (3.9)
 - **Cross-platform** — Python launcher + PowerShell fallback for Windows
 
@@ -57,6 +58,8 @@ The skill activates on: `帮我做一个落地页`, `做个首页`, `产品展�
 2. **Pick a city style** — 57 cards rendered live in your browser
 3. **Choose options** — typography, nav, color tone, transitions, hero/features variants
 4. **Get your site** — complete `index.html` + `style.css` + `main.js` + `icons.svg`
+5. **Preview** — auto-opens in your browser
+6. **Deploy** — optional one-click publish to Netlify with preview URL
 
 ## Project Structure
 
