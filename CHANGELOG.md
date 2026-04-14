@@ -2,6 +2,13 @@
 
 本项目的所有重要变更记录。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.7.0] - 2026-04-14
+
+### 新增
+
+- 在线演示站点部署到 GitHub Pages
+- README 新增 Release 和 License 徽章和快速导航链接
+
 ## [1.6.0] - 2026-04-14
 
 ### 新增
