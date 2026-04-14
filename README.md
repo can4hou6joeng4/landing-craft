@@ -27,6 +27,7 @@ your-product-landing/
 - **4 nav archetypes** — full-screen blast, magnetic pill, vertical side rail, split centered
 - **3 color tones** — original city, dark luxe, bright modern
 - **Multi-page support** — optional About, Contact, Blog sub-pages sharing the same design system
+- **3 form sections** — newsletter subscribe, waitlist signup, inline contact form
 - **Transition picker** — geometric / organic / blend / minimal section dividers
 - **One-click deploy** — optional Netlify deployment with preview URL, then production
 - **Python 3.6+ compatible** — works on macOS default Python (3.9)

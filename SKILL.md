@@ -43,6 +43,7 @@ This skill comes with pre-built assets. Read and use them directly:
 | `assets/sections/conversion-variants.html` | Pricing table, FAQ, brand wall, power CTA | Step 4: copy relevant section, all use CSS custom properties |
 | `assets/sections/footer-variants.html` | 3 Footer templates (极简单行/多列链接/杂志编辑) | Step 4: pick based on page complexity and brand tone |
 | `assets/sections/page-variants.html` | 3 Sub-page templates (关于我们/联系方式/博客列表) | Step 4: when user requests multi-page site |
+| `assets/sections/form-variants.html` | 3 Form section templates (邮件订阅/等待列表/内嵌联系表单) | Step 4: when page needs a form section |
 | `references/product-demo-hero.md` | Product demo hero principles + scene design guide | Read when user wants to show product workflow in hero (see Step 3/4) |
 
 **The quality guarantee of this skill comes from using these assets.** They encode specific design decisions that make outputs distinct. Don't describe what to do — copy the code and adapt it.
@@ -312,6 +313,9 @@ Common page sequences:
 | Sub-page — About / Brand story | 关于我们 | ABOUT (page-variants.html) |
 | Sub-page — Contact with form | 联系方式 | CONTACT (page-variants.html) |
 | Sub-page — Blog post listing | 博客列表 | BLOG (page-variants.html) |
+| Form — Newsletter subscribe | 邮件订阅 | NEWSLETTER (form-variants.html) |
+| Form — Waitlist signup | 等待列表 | WAITLIST (form-variants.html) |
+| Form — Inline contact form | 内嵌联系表单 | CONTACT_INLINE (form-variants.html) |
 
 #### 4c — Write the Output Files
 
