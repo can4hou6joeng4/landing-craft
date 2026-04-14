@@ -6,7 +6,7 @@
 
 A [Claude Code](https://claude.ai/claude-code) skill that generates **visually striking landing pages** with 57 city-inspired design systems.
 
-**[Live Demo](https://can4hou6joeng4.github.io/landing-craft/)** | **[Changelog](CHANGELOG.md)** | **[Contributing](CONTRIBUTING.md)**
+**[Live Demo](https://can4hou6joeng4.github.io/landing-craft/)** | **[Changelog](CHANGELOG.md)** | **[Contributing](CONTRIBUTING.md)** | **[中文文档](README.zh-CN.md)**
 
 > Not your typical card-grid template. Every output is a design artifact — clip-path dividers, GSAP scroll animations, SVG textures, real depth and layering.
 
