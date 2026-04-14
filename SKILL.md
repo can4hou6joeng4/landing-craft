@@ -58,6 +58,8 @@ Use `AskUserQuestion` to ask:
 
 Wait for the answer before proceeding.
 
+**Detect the conversation language:** If the user wrote their answer in English, set `LANG_VALUE=en` for all subsequent preview commands. If in Chinese, use `LANG_VALUE=zh`. This determines the UI language of the preview pages.
+
 ### Step 2: Generate the Style Preview
 
 Fill in the two placeholders and open the result — do NOT read the template file into context:
@@ -69,13 +71,13 @@ _SKILL_DIR=$(ls -d ~/.agents/skills/citycraft 2>/dev/null || ls -d ~/.claude/ski
 PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null || echo "")
 if [ -n "$PYTHON" ]; then
   # Python available (macOS / Linux / WSL / Windows with Python)
-  # Pass LANG=en for English-language conversations
+  # LANG_VALUE detected in Step 1 (zh or en)
   "$PYTHON" "$_SKILL_DIR/assets/scripts/run_preview.py" \
     --template "$_SKILL_DIR/assets/style-preview-template.html" \
     --output   ./style-preview.html \
     --port     17433 \
     --timeout  300 \
-    "LANG=zh" \
+    "LANG=$LANG_VALUE" \
     "PRODUCT_NAME=ACTUAL_PRODUCT_NAME" \
     "PRODUCT_HEADLINE=ACTUAL_HEADLINE" \
     "RECEIVER_PORT=17433"
@@ -121,13 +123,13 @@ Use the `$CITY_*` variables from 3a. Do NOT read the template file into context:
 
 ```bash
 if [ -n "$PYTHON" ]; then
-  # Pass LANG=en for English-language conversations
+  # LANG_VALUE detected in Step 1 (zh or en)
   "$PYTHON" "$_SKILL_DIR/assets/scripts/run_preview.py" \
     --template "$_SKILL_DIR/assets/options-preview-template.html" \
     --output   ./options-preview.html \
     --port     17432 \
     --timeout  300 \
-    "LANG=zh" \
+    "LANG=$LANG_VALUE" \
     "PRODUCT_NAME=ACTUAL_PRODUCT_NAME" \
     "PRODUCT_HEADLINE=ACTUAL_HEADLINE" \
     "CITY_NAME=ACTUAL_CITY_NAME" \
