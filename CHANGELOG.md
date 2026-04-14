@@ -2,6 +2,19 @@
 
 本项目的所有重要变更记录。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.6.0] - 2026-04-14
+
+### 新增
+
+- 6 种扩展板块变体（团队成员/数据统计/品牌滚动墙/作品集/技术集成/时间线）
+- GitHub Actions CI 自动化测试（Python 3.9 + 3.12 双版本验证）
+- CI 徽章添加到 README
+
+### 修复
+
+- 推荐页面序列补充 Footer 和 Form 板块
+- 新增 Startup pre-launch 推荐序列
+
 ## [1.5.0] - 2026-04-14
 
 ### 新增
