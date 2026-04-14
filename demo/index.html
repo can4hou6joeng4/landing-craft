@@ -211,22 +211,18 @@
       if (typeof gsap === 'undefined') return;
       gsap.registerPlugin(ScrollTrigger);
 
-      // Hero entrance — set opacity:0 via JS only when GSAP is ready
+      // Hero entrance — no pre-hidden CSS, GSAP handles everything
       if (!prefersReducedMotion) {
-        gsap.set('.js-hero', { opacity: 0 });
-        gsap.from('.js-hero', { y: 32, opacity: 0, filter: 'blur(6px)', duration: 0.9, ease: 'power3.out', stagger: 0.15, clearProps: 'filter,opacity' });
-      } else {
-        gsap.set('.js-hero', { opacity: 1 });
+        gsap.from('.js-hero', { y: 32, autoAlpha: 0, filter: 'blur(6px)', duration: 0.9, ease: 'power3.out', stagger: 0.15, clearProps: 'filter' });
       }
 
-      // Stats count-up + reveal
+      // Stats reveal
       document.querySelectorAll('.stat-item').forEach((item, i) => {
         if (!prefersReducedMotion) {
-          gsap.set(item, { opacity: 0 });
-          gsap.from(item, { y: 30, opacity: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out',
-            scrollTrigger: { trigger: item, start: 'top 88%', toggleActions: 'play none none none' }
+          gsap.from(item, { y: 30, autoAlpha: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out',
+            scrollTrigger: { trigger: item, start: 'top 92%', toggleActions: 'play none none none' }
           });
-        } else { gsap.set(item, { opacity: 1 }); }
+        }
       });
 
       document.querySelectorAll('.js-count').forEach(el => {
@@ -234,19 +230,18 @@
         if (prefersReducedMotion) { el.textContent = target; return; }
         const obj = { val: 0 };
         gsap.to(obj, { val: target, duration: 1.5, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
+          scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' },
           onUpdate: () => { el.textContent = Math.round(obj.val); }
         });
       });
 
-      // Feature cards stagger
+      // Feature cards — use autoAlpha, wider trigger range
       document.querySelectorAll('.feature-card').forEach((card, i) => {
         if (!prefersReducedMotion) {
-          gsap.set(card, { opacity: 0 });
-          gsap.from(card, { y: 40, opacity: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out',
-            scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' }
+          gsap.from(card, { y: 40, autoAlpha: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out',
+            scrollTrigger: { trigger: card, start: 'top 95%', toggleActions: 'play none none none' }
           });
-        } else { gsap.set(card, { opacity: 1 }); }
+        }
       });
 
       document.fonts.ready.then(() => ScrollTrigger.refresh());
