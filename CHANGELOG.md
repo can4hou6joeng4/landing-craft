@@ -2,6 +2,19 @@
 
 本项目的所有重要变更记录。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.5.0] - 2026-04-14
+
+### 新增
+
+- 暗色模式运行时切换功能（localStorage 持久化 + 系统偏好检测）
+- 部署支持扩展至 Netlify、Vercel、GitHub Pages 三个平台
+
+### 修复
+
+- 修复 Footer、Form、Page 变体未接入工作流的问题
+- Step 1 新增子页面需求询问环节
+- Step 3 补充 footer/form/pages 字段选择说明
+
 ## [1.4.0] - 2026-04-14
 
 ### 新增
